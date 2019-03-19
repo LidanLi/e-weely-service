@@ -15,6 +15,23 @@ use Illuminate\Http\Request;
 
 Route::get('/trips/{trip}/download', 'Api\DownloadTripPackageController')->middleware('auth:api');
 
+Route::get('/user/{name}', function($name){
+    $list = array();
+    $users = \App\User::where('name', $name)->get();
+
+    foreach ($users as $user) {
+        $trips = \App\Trip::where('created_by_id', $user->id)->get();
+        foreach ($trips as $trip) {
+            $single_trip = array('trip_name' => $trip->name, 'trip_id'=> $trip-> id);
+            array_push($list, $single_trip);
+        }
+    }
+
+    return json_encode($list);
+
+});
+
+
 Route::get('/events/{event}/participants/available', function (\App\Event $event) {
     return $event->available_participants;
 });

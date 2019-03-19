@@ -27,6 +27,7 @@ class StoreDocument extends FormRequest
             'name' => 'required',
             'document_type' => 'required',
             'file' => 'file|mimes:pdf'
+            //'file.*' => 'file|mimes:pdf,docx,doc,xls,xlsx,ppt,pptx'
         ];
     }
 }
