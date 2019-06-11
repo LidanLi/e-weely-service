@@ -9,7 +9,7 @@ class Event extends Model
     protected $guarded = [];
     protected $appends = ['description_html', 'body_html'];
     protected $touches = ['day'];
-
+   
     public function day()
     {
         return $this->belongsTo(Day::class);
@@ -63,5 +63,10 @@ class Event extends Model
     public function getBodyHtmlAttribute()
     {
         return \Markdown::text($this->body);
+    }
+
+    public function getCurrentDocumentsAttribute()
+    {
+        return $this->documents;
     }
 }

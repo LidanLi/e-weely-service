@@ -46,6 +46,7 @@ Vue.component('add-participant-modal', require('./components/AddParticipantModal
 Vue.component('add-contact-modal', require('./components/AddContactModal.vue'));
 Vue.component('add-document-modal', require('./components/AddDocumentModal.vue'));
 Vue.component('markdown-textarea', require('./components/MarkdownTextarea.vue'));
+Vue.component('simple-draggable', require('./components/DocumentDraggable.vue'));
 
 const app = new Vue({
     el: '#app',

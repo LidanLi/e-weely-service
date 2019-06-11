@@ -115,7 +115,11 @@
 
                     @if($event->documents->count())
 
-                        @foreach($event->documents as $document)
+                        <simple-draggable
+                                :event="'{{$event->id }}'"
+                                :csrf_token="'{{ csrf_token() }}'">
+                        </simple-draggable>
+                        <!--@foreach($event->documents as $document)
                             <div class="columns">
                                 <div class="column is-three-quarters">
                                     <a href="{{ url('storage/' . $document->file) }}">{{ $document->name }}</a>
@@ -133,7 +137,7 @@
                                     </form>
                                 </div>
                             </div>
-                        @endforeach
+                        @endforeach-->
 
                     @endif
                 </div>

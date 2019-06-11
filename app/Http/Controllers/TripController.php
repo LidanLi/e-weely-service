@@ -49,7 +49,8 @@ class TripController extends Controller
     {
         $trip = $request->user()->myTrips()->create([
             'name' => $request->name,
-            'description' => $request->description
+            'description' => $request->description,
+            'secretkey' => $request->secretkey
         ]);
 
         $trip->update([
@@ -104,7 +105,8 @@ class TripController extends Controller
 
         $trip->update([
             'name' => $request->name,
-            'description' => $request->description
+            'description' => $request->description,
+            'secretkey' => $request->secretkey
         ]);
 
         return redirect()->back()->with('success', __('Trip updated'));

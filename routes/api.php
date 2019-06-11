@@ -31,6 +31,19 @@ Route::get('/user/{name}', function($name){
 
 });
 
+Route::get('/trips/{secret}', function($secret){
+    $list = array();
+
+    $trips = \App\Trip::where('secretkey', $secret)->get();
+    foreach($trips as $trip){
+        $single_trip = array('trip_name' => $trip->name, 'trip_id' => $trip->id);
+        array_push($list, $single_trip);
+    }
+
+    return json_encode($list);
+
+});
+
 
 Route::get('/events/{event}/participants/available', function (\App\Event $event) {
     return $event->available_participants;
@@ -44,6 +57,17 @@ Route::get('/events/{event}/documents/available', function (\App\Event $event) {
     return $event->available_documents;
 });
 
+Route::get('/events/{event}/documents/current', function (\App\Event $event) {
+    return $event->current_documents;
+});
+
+Route::get('/events/{event}/documents/updated/{ids}', function (\App\Event $event, $ids) {
+    
+    $list = explode(',', $ids);
+    $event->documents()->toggle($list);
+
+    return $event->documents()->toggle($list);
+});
 
 Route::get('/user', function() {
     return \App\Trip::with('days', 'days.events', 'days.events.documents', 'days.events.people', 'articles', 'people')->first();

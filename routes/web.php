@@ -22,6 +22,7 @@ Route::resource('users', 'UserController');
 Route::resource('trips', 'TripController');
 
 Route::post('trips/{trip}/generate', ['as' => 'trips.generate', 'uses' => 'GenerateTripPackage']);
+Route::post('trips/{trip}/copy', ['as' => 'trips.copy', 'uses' => 'GenerateTripCopy']);
 
 /*
  * Days

@@ -26,8 +26,8 @@ class StoreDocument extends FormRequest
         return [
             'name' => 'required',
             'document_type' => 'required',
-            'file' => 'file|mimes:pdf'
-            //'file.*' => 'file|mimes:pdf,docx,doc,xls,xlsx,ppt,pptx'
+            //'file' => 'file|mimes:pdf'
+            'file.*' => 'file|mimes:pdf,docx,doc,xls,xlsx,ppt,pptx'
         ];
     }
 }

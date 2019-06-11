@@ -7,11 +7,13 @@
     "require": {
         "php": ">=5.6.4",
         "chumper/zipper": "^1.0",
+        "doctrine/dbal": "^2.9",
         "erusev/parsedown": "^1.6",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
+        "rutorika/sortable": "4.2",
         "spatie/eloquent-sortable": "^3.3"
     },
     "require-dev": {

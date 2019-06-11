@@ -26,7 +26,8 @@ class UpdateDocument extends FormRequest
         return [
             'name' => 'required',
             'document_type' => 'required',
-            'file' => 'sometimes|file|mimes:pdf'
+            //'file' => 'sometimes|file|mimes:pdf'
+            'file.*' => 'sometiems|file|mimes:pdf,docx,doc,xls,xlsx,ppt,pptx'
         ];
     }
 }
