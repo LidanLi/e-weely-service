@@ -1,8 +1,9 @@
 # E-Briefing Service
 
-This is a [Laravel](https://laravel.com/)-based backend to the [E-Briefing App](https://github.com/cds-snc/e-briefing-app).
+This is a [Laravel](https://laravel.com/)-based backend to the [eWeekly App](https://github.com/csps-efpc-it/eWeekly).
 
-Create and manage e-Briefing "binders" that can be installed on a mobile device and updated remotely through the e-Briefing App
+
+Create and manage e-Weekly "binders" that can be installed on a mobile device and updated remotely through the e-Weekly App
 
 This service allows you to: 
 - Create a daily itinerary detailing meetings and events and include relevant documents, contacts, and biographies of participants
@@ -10,6 +11,14 @@ This service allows you to:
 - Create biographies of members of the delegation and people they will meet
 - Free-form "articles" allow you to include any other information that doesn't fit anywhere else
 - Collaborate with other members of your team
+
+## Update
+This project is forked from CDS and with below modification to meet the need for eWeekly agenda:
+- Allow upload more document types including word, excel, powerpoint and pdf
+- New Secret Key field and allow admin to filter and retrieve the weekly agenda on the iPad
+- New copy week function that allow administrator to copy the whole week from another week block
+- Allow optional title, time from and to when creating an event
+- New drag and drop function inside the event page, and allow admin to re-order the documents' order
 
 ## Heads up!
 
